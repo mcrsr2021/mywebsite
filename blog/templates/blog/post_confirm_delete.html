@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block title %}Delete confirmation for {{ object.title }}{% endblock %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <h4>Are You Sure to delete {{ object }}</h4>
+<a href="{% url 'post_detail' post.id %}" class="btn btn-secondary">No</a>
+<button type="submit" class="btn btn-danger">Yes</button>
+</form>
+{% endblock content %}

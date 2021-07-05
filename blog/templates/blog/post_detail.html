@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+<ul>
+  <li>{{ object.title }}</li>
+  <li>{{ object.body }}</li>
+</ul>
+<a href="{% url 'post_update' post.id %}" class="btn btn-secondary">Update</a>
+<a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Delete</a>
+{% endblock content %}
